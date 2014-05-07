@@ -1,0 +1,81 @@
+//
+//  ViewSkinItem.m
+//  ChinaBrowser
+//
+//  Created by Glex on 14-3-27.
+//  Copyright (c) 2014年 KOTO Inc. All rights reserved.
+//
+
+#import "ViewSkinItem.h"
+
+@interface ViewSkinItem () {
+    UIImageView *_ivPic;
+    UIImageView *_ivCover;
+    UIImageView *_ivCheck;
+}
+
+@end
+
+@implementation ViewSkinItem
+
+- (id)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
+        CGRect rc = self.bounds;
+        rc.size = CGSizeMake(100, 100);
+        _ivPic = [[UIImageView alloc] initWithFrame:rc];
+        _ivPic.clipsToBounds = YES;
+        _ivPic.layer.cornerRadius = 10;
+        _ivPic.contentMode = UIViewContentModeScaleAspectFill;
+        [self addSubview:_ivPic];
+
+        _ivCover = [[UIImageView alloc] initWithFrame:rc];
+        [_ivCover setImageWithName:@"ipad-skin-cover"];
+        [self addSubview:_ivCover];
+        
+        rc.size = CGSizeMake(30, 30);
+        rc.origin.x = frame.size.width-rc.size.width;
+        rc.origin.y = frame.size.height-rc.size.height;
+        _ivCheck = [[UIImageView alloc] initWithFrame:rc];
+        _ivCheck.alpha = 0;
+        [_ivCheck setImageWithName:@"ipad-skin-check"];
+    }
+    
+    return self;
+}
+
+- (void)setSelected:(BOOL)selected {
+    [super setSelected:selected];
+
+    self.userInteractionEnabled = !selected;
+    if (selected) {
+        [self addSubview:_ivCheck];
+    }
+    _ivCheck.transform = CGAffineTransformMakeScale(selected?0.1:1, selected?0.1:1);
+    [UIView animateWithDuration:0.25 animations:^{
+        _ivCheck.alpha = selected;
+        _ivCheck.transform = CGAffineTransformMakeScale(selected?1:0.1, selected?1:0.1);
+    } completion:^(BOOL finished) {
+        if (!selected) {
+            _ivCheck.transform = CGAffineTransformIdentity;
+            [_ivCheck removeFromSuperview];
+        }
+    }];
+}
+
+- (void)setHighlighted:(BOOL)highlighted {
+    [super setHighlighted:highlighted];
+    
+    self.alpha = highlighted?0.6:1;
+    [UIView animateWithDuration:0.5 animations:^{
+       self.transform = CGAffineTransformMakeScale(highlighted?1.05:1, highlighted?1.05:1);
+    }];
+}
+
+- (void)setPic:(UIImage *)pic {
+    if (_pic != pic) {
+        _pic = pic;
+        _ivPic.image = pic;
+    }
+}
+
+@end

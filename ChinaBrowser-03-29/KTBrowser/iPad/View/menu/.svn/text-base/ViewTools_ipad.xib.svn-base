@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none">
+    <dependencies>
+        <deployment defaultVersion="1280" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewMenu_ipad">
+            <connections>
+                <outlet property="ctrl2dCode" destination="At6-Rn-6aR" id="4fB-Oe-YrV"/>
+                <outlet property="ctrlFindInPage" destination="rYj-Ez-JVa" id="zFF-zj-bwi"/>
+                <outlet property="ctrlScreenshot" destination="5Zg-kz-6BF" id="xtQ-EE-nUP"/>
+                <outlet property="ctrlShare" destination="K7h-mh-drK" id="SFI-21-Zuu"/>
+                <outlet property="img2dCode" destination="sqE-L2-TTU" id="DLU-PC-ZhO"/>
+                <outlet property="imgFindInPage" destination="efK-bk-VsQ" id="epU-HP-jV6"/>
+                <outlet property="imgScreenshot" destination="5Hl-sa-aod" id="6j4-Qk-acl"/>
+                <outlet property="imgShare" destination="icM-RU-1yE" id="4so-3Y-UL7"/>
+                <outlet property="lb2dCode" destination="1wu-Dt-bwP" id="PpW-i6-VJT"/>
+                <outlet property="lbFindInPage" destination="vZB-3L-CQ6" id="L8N-X7-P8y"/>
+                <outlet property="lbScreenshot" destination="iE1-et-9xt" id="zsx-71-I15"/>
+                <outlet property="lbShare" destination="aXB-Mw-pwT" id="KHg-kJ-kTi"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="BVQ-6A-EAl">
+            <rect key="frame" x="0.0" y="0.0" width="230" height="200"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" id="5Zg-kz-6BF" customClass="CtrlMenuItem_ipad">
+                    <rect key="frame" x="33" y="9" width="70" height="80"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="center" id="5Hl-sa-aod">
+                            <rect key="frame" x="10" y="5" width="50" height="50"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        </imageView>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iE1-et-9xt">
+                            <rect key="frame" x="0.0" y="58" width="70" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="imgNormal" destination="5Hl-sa-aod" id="LOk-qR-mo2"/>
+                        <outlet property="labNormal" destination="iE1-et-9xt" id="clF-Ry-1ew"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" id="At6-Rn-6aR" customClass="CtrlMenuItem_ipad">
+                    <rect key="frame" x="127" y="9" width="70" height="80"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="center" id="sqE-L2-TTU">
+                            <rect key="frame" x="10" y="5" width="50" height="50"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        </imageView>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1wu-Dt-bwP">
+                            <rect key="frame" x="0.0" y="58" width="70" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="imgNormal" destination="sqE-L2-TTU" id="zaa-0x-2S8"/>
+                        <outlet property="labNormal" destination="1wu-Dt-bwP" id="kgA-OC-xyh"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" id="rYj-Ez-JVa" customClass="CtrlMenuItem_ipad">
+                    <rect key="frame" x="33" y="102" width="70" height="80"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="center" id="efK-bk-VsQ">
+                            <rect key="frame" x="10" y="5" width="50" height="50"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        </imageView>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vZB-3L-CQ6">
+                            <rect key="frame" x="0.0" y="58" width="70" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="imgNormal" destination="efK-bk-VsQ" id="aqt-Gn-ZhD"/>
+                        <outlet property="labNormal" destination="vZB-3L-CQ6" id="kIb-1f-4ID"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" id="K7h-mh-drK" customClass="CtrlMenuItem_ipad">
+                    <rect key="frame" x="127" y="102" width="70" height="80"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="center" id="icM-RU-1yE">
+                            <rect key="frame" x="10" y="5" width="50" height="50"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        </imageView>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="分享" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aXB-Mw-pwT">
+                            <rect key="frame" x="3" y="58" width="65" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="imgNormal" destination="icM-RU-1yE" id="x4T-QJ-7oJ"/>
+                        <outlet property="labNormal" destination="aXB-Mw-pwT" id="4wK-F2-WjE"/>
+                    </connections>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+        </view>
+    </objects>
+</document>

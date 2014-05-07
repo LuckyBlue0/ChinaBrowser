@@ -1,0 +1,233 @@
+/* 
+  Localized.strings
+  KTBrowser
+
+  Created by David on 14-2-25.
+  Copyright (c) 2014年 KOTO Inc. All rights reserved.
+*/
+
+start_app = "Immediately experience";
+
+back = "Back";
+ok = "OK";
+cancel = "Cancel";
+done = "Done";
+redo = "Redo";
+clear = "Clear";
+action = "Action";
+menu = "Menu";
+width = "Width";
+height = "Height";
+Brush_Set = "Brush Set";
+
+// ----- menu
+commonly = "Commonly";
+settings = "Settings";
+tools = "Tools";
+
+add_bookmark = "Add Bookmark";
+remove_bookmark = "Remove Bookmark";
+bookmark_history = "Bookmark/History";
+refresh = "Refresh";
+ui_mode_day = "Day Mode";
+ui_mode_night = "Night Mode";
+set_brightness = "Set Brightness";
+new_page = "New Page";
+no_image = "No Image";
+fontsize = "Font Size";
+no_history = "No History";
+lock_rotate = "Lock Rotate";
+unlock_rotate = "Unlock Rotate";
+feedback = "Feedback";
+check_update = "Check Update";
+skin = "Skin";
+fullscreen = "Full Screen";
+exit_fullscreen = "Exit Full Screen";
+screenshot = "ScreenShot";
+share = "Share";
+find_in_page = "Find Text";
+qrcode = "QRCode";
+
+// ------ set ksin
+skin_add_skin = "Add skin";
+skin_take_photo = "Take photo";
+skin_select_from_album = "Select from album";
+camera_not_available = "Camera is not available";
+set_skin = "Set skin";
+
+// ------ set font
+font_size = "Font size";
+font_size_default = "Default";
+font_size_small = "Small";
+font_size_big = "Big";
+
+// ------ top bar
+input_url_or_qrcode = "Input URL or QRCode";
+search = "Search";
+enter_content = "Please enter the content";
+
+
+// ==============================
+// ==============================
+///////////// iPad //////////////
+// ==============================
+"noImgModeOpen" = "No Img Mode opened";
+"noImgModeClose" = "No Img Mode closed";
+"ScanQRCode" = "二维码扫描";
+"ScanDesc" = "将二维码图案置于扫描区域";
+"topMenuTextUrlPlaceholder" = "输入网址或扫描二维码";
+
+"SavedPhotoSucceed" = "Saved Photo Succeed!";
+"SavedPhotoFailed"  = "Without permission, please allow app to access the album!";
+
+// ======================
+"homePage" = "Home";
+"XinBiaoQian" = "New Tab";
+"ZuiJinLiuLanLiShi" = "Recent Browsing History";
+"QingChuJiLu" = "ClearHistory";
+"ScreenLocked" = "ScreenLock";
+"PingMuJieSuo" = "Screen Free";
+"YinShenMoShi" = "Ncognito Mode";
+"RecentlyClosed" = "Recent Close";
+"noImgMode" = "No Image";
+"GengXin" = "Update";
+"BangDing" = "Bind";
+"PingFen" = "Score";
+"YeJian" = "Night";
+"BaiTian" = "Day";
+"JieCheYinShen" = "Normal Mode";
+"JiaZaiZhong" = "Loading...";
+"KongBaiYe" = "New Tab";
+"LiShi" = "History";
+"ShouCang" = "Favorite";
+"QingChuLiShi" = "Clear History";
+"BianJi" = "Edit";
+"WanCheng" = "Done";
+
+"SouSuo" = "Search";
+"QingChuJiLuChengGong" = "Clear History Success!";
+"PingMuXuanZhuanYiSuoDing" = "Screen rotation is locked!";
+"PingMuXuanZhuanYiJiSuo" = "Screen rotation is unlocked!";
+"YiJinRuYinShenMoShi" = "You've gone incognito, your browsing history will not be recorded";
+"YiJieChuYinShen" = "Incognito mode has been released";
+"BiaoQianYiMan" = "Tab is full!";
+
+"TianJiaKuaiSuLianJie" = "Add Quick Links";
+"QueDing" = "YES";
+"QuXiao" = "NO";
+"CongShuQianXuanQu" = "Select from Fav";
+"CongLiShiZhongXuanQu" = "Select from His";
+
+
+"YiChengGongBaoCunDaoShouCang" = "Successfully saved to your favorites!";
+"ShanChuShouCangChengGong" = "Remove Favorite success!";
+"YiChengGongBaoCunDaoXiangCe" = "Successfully saved to the photo album!";
+"QingXuanZe" = "Please select";
+"ZaiDangQianYeMianDaKaiLianJie" = "Open links on the current page";
+"ZaiXinBiaoQianDaKaiLianJie" = "Open link in a new tab";
+"BaoCunTuPianDaoBenDi" = "Save the image to your local";
+"BaoCunDangQianYeMianDaoShuQian" = "Save this page to bookmarks";
+"YongSafariDaKaiLianJie" = "Open links in Safari";
+
+"lishiOrShoucang" = "His/Fav";
+"fenXiang" = "Share";
+"biaoTi" = "Title";
+"wangZhi" = "Website";
+"souSuo" = "Search";
+
+"qingXuanZeYaoFenXiang" = "Please select one to share:";
+"tongGuoXinLangWeiBo" = "By Sina Weibo";
+"tongGuoTXWeiBo" = "By Tencent Weibo";
+"wangYeJiaZaiShiBai" = "Web page failed to load";
+
+"wangye" = "Web page";
+"shipin" = "Video";
+"gouwu" = "Shopping";
+"yinyue" = "Music";
+"tupian" = "Picture";
+
+"baidu" = "Baidu";
+"sougou" = "Sogou";
+"yahoo" = "Yahoo! Search";
+"google" = "Google";
+
+"youku" = "Youku video";
+"baidushipin" = "Baidu Video";
+
+"jingdong" = "Jingdong";
+"taobao" = "Taobao";
+
+"baiduyinyue" = "Baidu Music";
+"yiting" = "YiTing";
+"baidutupian" = "Baidu Image";
+"sougoutupian" = "Sogou Pictures";
+
+// -------------------- user sync ----
+user_name = "User name";
+pwd = "Password";
+nick_name = "Nickname";
+remember_pwd = "Remember password";
+forgot_password = "Forgot password";
+sign_in_with = "Sign in with third party";
+
+login = "Login";
+logout = "Logout";
+register = "Register";
+sync = "Sync";
+modify_profile = "Modify profile";
+modify = "Modify";
+
+username = "Username";
+nickname = "Nickname";
+pwd = "Password";
+pwd2 = "Confirm";
+email = "Email";
+pwd_old = "Original password";
+pwd_new = "New password";
+submit = "Submit";
+modify_tip = "Please leave it blank if there is no need to change the item!";
+set = "Set";
+
+reset = "Reset";
+image_from_camera = "From camera";
+image_from_albums = "From albums";
+
+placeholder_username = "Please input username";
+placeholder_nickname = "Please input nickname";
+placeholder_pwd = "Please input password";
+placeholder_pwd2 = "Please input confirm password";
+placeholder_email = "Please input Email";
+placeholder_pwd_old = "Please input original password";
+placeholder_pwd_new = "Please input new password";
+
+msg_username_empty = "Please input username";
+msg_username_length = "Username length is not enough";
+msg_nickname_empty = "Please input nickname";
+msg_nickname_length = "Nickname length is not enough";
+msg_pwd_empty = "Please input password";
+msg_pwd_length = "Password length is not enough";
+msg_pwd2_empty = "Please confirm the password";
+msg_pwd2_nomatch = "Password not match";
+msg_email_empty = "Please input Email";
+msg_email_invalid = "Email invalid";
+msg_pwd_old_empty = "Please input original password";
+msg_pwd_old_length = "Original password length is not enough";
+msg_pwd_new_empty = "Please input new password";
+msg_pwd_new_length = "New password length is not enough";
+msg_modify_nochanaged = "No item chanaged";
+
+sync_providing = "Providing ";
+sync_service = " sync service";
+sync_lasttime = "Last sync time";
+sync_synccontent = "Last sync content";
+sync_never = "Never sync";
+sync_now = "One-Key sync";
+
+sync_info = "Sync info";
+sync_option = "Sync option";
+sync_home = "Home navigation";
+sync_fav = "Bookmark";
+sync_history = "History";
+
+sync_login = "Please login";
+

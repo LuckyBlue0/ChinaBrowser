@@ -1,0 +1,45 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+    #warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+
+#import "common.h"
+#import "Define.h"
+#import "FilePathUtil.h"
+#import "NSString+URL.h"
+#import "VARequest.h"
+#import "UIColor+Expanded.h"
+#import "KTAnimationKit.h"
+#import "UIImage+Bundle.h"
+#import "AppConfig.h"
+#import "UITextInputUtil.h"
+#import "API.h"
+
+// =======================================
+// =======================================
+//////////////////// iPad ////////////////
+// =======================================
+#import "config.h"
+
+#import "NSStringEx.h"
+#import "UIColorEx.h"
+#import "UIViewEx.h"
+#import "UIButtonEx.h"
+#import "UIImageViewEx.h"
+#import "UITextFieldEx.h"
+
+#import "HttpDownload.h"
+#import "PrefixFiles.h"
+
+#endif

@@ -1,0 +1,254 @@
+//
+//  ViewSkin.m
+//  ChinaBrowser
+//
+//  Created by Glex on 14-3-27.
+//  Copyright (c) 2014年 KOTO Inc. All rights reserved.
+//
+
+#import "ViewSkin.h"
+
+#import "ViewSkinItem.h"
+
+#define kDefaultItemCount 2
+#define kInsetLeft  30
+
+#define kSkinItemW  110
+#define kSkinItemH  110
+#define kSkinItemSpaceX  20
+#define kSkinItemOriginY 12
+
+@interface ViewSkin () {
+    ViewSkinItem *_itemAdd;
+    UIScrollView *_svList;
+    
+    NSInteger   _sysItemsCount;
+    NSMutableArray *_arrSkinItems;
+    
+    NSArray     *_arrSortIdx;
+    NSMutableDictionary *_dicSkinImages;
+    
+    UIImagePickerController *_vcPicker;
+}
+
+@end
+
+@implementation ViewSkin
+
+- (id)initWithFrame:(CGRect)frame{
+    if (self = [super initWithFrame:frame]) {
+        self.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleWidth;
+       
+        _svList = [[UIScrollView alloc] initWithFrame:self.bounds];
+        _svList.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+        _svList.contentInset = UIEdgeInsetsMake(0, kInsetLeft, 0, 0);
+        _svList.showsHorizontalScrollIndicator = NO;
+        [self addSubview:_svList];
+        
+        [self loadSkinItems];
+        [self readyState];
+    }
+    
+    return self;
+}
+
+#pragma mark - items
+- (void)loadSkinItems {
+    [_svList.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    if (!_arrSkinItems) {
+        _arrSkinItems  = [[NSMutableArray alloc] init];
+        _dicSkinImages = [[NSMutableDictionary alloc] init];
+        
+    }
+    [_arrSkinItems removeAllObjects];
+    [_dicSkinImages removeAllObjects];
+    
+    // 按钮'+', 不加到_arrSkinItems
+    CGRect rc = {{0, kSkinItemOriginY}, {kSkinItemW, kSkinItemH}};
+    _itemAdd = [[ViewSkinItem alloc] initWithFrame:rc];
+    NSString *picPath = [[NSBundle mainBundle] pathForResource:@"ipad-skin-add" ofType:@"png"];
+    [_itemAdd setPic:[UIImage imageWithContentsOfFile:picPath]];
+    [_itemAdd addTarget:self action:@selector(onTouchItemAdd) forControlEvents:UIControlEventTouchUpInside];
+    [_svList addSubview:_itemAdd];
+    
+    [_dicSkinImages addEntriesFromDictionary:[AppManager skinImages]];
+    _sysItemsCount = _dicSkinImages.allKeys.count;
+
+    _arrSortIdx = [_dicSkinImages.allKeys sortedArrayUsingSelector:@selector(compare:)];
+    for (NSString *idx in _arrSortIdx) {
+        [self addItemWithImage:_dicSkinImages[idx]];
+    }
+}
+
+- (void)addItemWithImage:(UIImage *)image {
+    NSInteger itemTag = _arrSkinItems.count;
+    
+    CGRect rcRaw = _itemAdd.frame;
+    CGRect rcNew = rcRaw;
+    rcNew.origin.x += kSkinItemW+kSkinItemSpaceX;
+    ViewSkinItem *viewItem = [[ViewSkinItem alloc] initWithFrame:rcNew];
+    viewItem.tag = itemTag;
+    [viewItem setPic:image];
+    [viewItem addTarget:self action:@selector(onTouchItem:) forControlEvents:UIControlEventTouchUpInside];
+    [_svList addSubview:viewItem];
+    [_arrSkinItems addObject:viewItem];
+    
+    _svList.contentSize = CGSizeMake(rcNew.origin.x+kSkinItemW+kSkinItemSpaceX, kViewSkinH);
+    [UIView animateWithDuration:0.25 animations:^{
+        _itemAdd.frame = rcNew;
+        viewItem.frame = rcRaw;
+    } completion:^(BOOL finished) {
+        BOOL dayMode = isDayMode;
+        if (itemTag == 0) {
+            viewItem.selected = dayMode;
+        }
+        else if (itemTag == 1) {
+            viewItem.selected = !dayMode;
+        }
+        CGFloat contentW = _svList.contentSize.width;
+        CGFloat boundsW  = _svList.bounds.size.width;
+        if (contentW > boundsW) {
+            [_svList setContentOffset:CGPointMake(contentW-boundsW, 0) animated:YES];
+        }
+    }];
+}
+
+- (void)readyState {
+    NSInteger idx = 0;
+    __block CGFloat originY = kSkinItemOriginY;
+    for (ViewSkinItem *viewItem in _svList.subviews) {
+        if (![viewItem isKindOfClass:[ViewSkinItem class]]) {
+            continue;
+        }
+        
+        CGRect rc = viewItem.frame;
+        originY += 30;
+        rc.origin.y = originY;
+        viewItem.frame = rc;
+        
+        ++idx;
+    }
+    
+    _svList.contentOffset = CGPointMake(-kInsetLeft, 0);
+}
+
+- (void)animateItems {
+    [self readyState];
+    
+    NSInteger idx = 0;
+    for (ViewSkinItem *viewItem in _svList.subviews) {
+        if (![viewItem isKindOfClass:[ViewSkinItem class]]) {
+            continue;
+        }
+        
+        [UIView animateWithDuration:idx*0.02+0.6 animations:^{
+            CGRect rc = viewItem.frame;
+            rc.origin.y = kSkinItemOriginY;
+            viewItem.frame = rc;
+        }];
+        
+        ++idx;
+    }
+}
+
+- (void)changeBlurImage {
+    if (self.alpha == 1) {
+        [self setBgImageWithStretchImage:[SkinManager_ipad skinBlurImage]];
+        [KTAnimationKit animationEaseIn:self];
+    }
+}
+
+- (void)showImagePicker:(BOOL)show openCamera:(BOOL)openCamera {
+    if (show) {
+        _vcPicker = [[UIImagePickerController alloc] init];
+        _vcPicker.allowsEditing = YES;
+        _vcPicker.delegate      = self;
+
+        if (openCamera
+            && [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+            _vcPicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        }
+
+        UIView *viewSuper = [AppManager vcRoot].viewContent;
+        CGRect rc = viewSuper.bounds;
+        rc.origin.y = rc.size.height;
+        _vcPicker.view.frame = rc;
+        [viewSuper addSubview:_vcPicker.view];
+        
+        [UIView animateWithDuration:0.25 animations:^{
+            _vcPicker.view.transform = CGAffineTransformMakeTranslation(0, -rc.size.height);
+        }];
+    }
+    else {
+        [UIView animateWithDuration:0.25 animations:^{
+            _vcPicker.view.transform = CGAffineTransformIdentity;
+        } completion:^(BOOL finished) {
+            [_vcPicker.view removeFromSuperview];
+            _vcPicker = nil;
+        }];
+    }
+}
+
+#pragma mark - user interaction
+- (void)onTouchItem:(ViewSkinItem *)viewItem {
+    for (ViewSkinItem *loopItem in _arrSkinItems) {
+        loopItem.selected = (viewItem==loopItem);
+    }
+
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNotifSkinChanged object:viewItem.pic];
+    [self changeBlurImage];
+}
+
+- (void)onTouchItemAdd {
+    [[[UIAlertView alloc] initWithTitle:nil
+                                message:GetTextFromKey(@"QingXuanZe")
+                               delegate:self
+                      cancelButtonTitle:GetTextFromKey(@"cancel")
+                      otherButtonTitles:GetTextFromKey(@"skin_select_from_album"),
+                                        GetTextFromKey(@"skin_take_photo"), nil]
+     show];
+}
+
+#pragma mark - notif
+- (void)whenDayModeChanged {
+    [self changeBlurImage];
+}
+
+- (void)whenDeviceDidRotate {
+    [self changeBlurImage];
+}
+
+#pragma mark - UIAlertViewDelegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex != alertView.cancelButtonIndex) {
+        switch (buttonIndex) {
+            case 1:
+            {
+                [self showImagePicker:YES openCamera:NO];
+            }
+                break;
+            case 2:
+            {
+                [self showImagePicker:YES openCamera:YES];
+            }
+                break;
+                
+            default:
+                break;
+        }
+    }
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo {
+    [self addItemWithImage:image];
+    [AppManager addSkin:image];
+    
+    [self showImagePicker:NO openCamera:NO];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [self showImagePicker:NO openCamera:NO];
+}
+
+@end

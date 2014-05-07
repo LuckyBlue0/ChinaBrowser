@@ -1,0 +1,234 @@
+/* 
+  Localized.strings
+  KTBrowser
+
+  Created by David on 14-2-25.
+  Copyright (c) 2014年 KOTO Inc. All rights reserved.
+*/
+
+start_app = "马上体验";
+
+back = "返回";
+ok = "好";
+cancel = "取消";
+done = "完成";
+redo = "重做";
+clear = "清除";
+action = "操作";
+menu = "菜单";
+width = "宽";
+height = "高";
+Brush_Set = "画笔设置";
+
+// ----- menu
+commonly = "常用";
+settings = "设置";
+tools = "工具";
+
+add_bookmark = "添加书签";
+remove_bookmark = "删除书签";
+bookmark_history = "书签/历史";
+refresh = "刷新";
+ui_mode_day = "日间模式";
+ui_mode_night = "夜间模式";
+set_brightness = "亮度调节";
+new_page = "新建页面";
+no_image = "无图浏览";
+fontsize = "字体大小";
+no_history = "无痕浏览";
+lock_rotate = "锁定旋转";
+unlock_rotate = "解锁旋转";
+feedback = "反馈";
+check_update = "检查更新";
+skin = "皮肤";
+fullscreen = "全屏";
+exit_fullscreen = "退出全屏";
+screenshot = "截图涂鸦";
+share = "分享";
+find_in_page = "页内查找";
+qrcode = "二维码";
+
+// ------ set ksin
+skin_add_skin = "添加皮肤";
+skin_take_photo = "拍照";
+skin_select_from_album = "从相册选取";
+camera_not_available = "照相机不可用";
+set_skin = "设置皮肤";
+
+//------ set font
+font_size = "字体大小";
+font_size_default = "默认";
+font_size_small = "偏小";
+font_size_big = "偏大";
+
+// ------ top bar
+input_url_or_qrcode = "输入网址或二维码";
+search = "搜索";
+enter_content = "请输入内容";
+
+// ==============================
+// ==============================
+///////////// iPad //////////////
+// ==============================
+"noImgModeOpen" = "无图模式已开启";
+"noImgModeClose" = "无图模式已关闭, 刷新页面可加载图片";
+"ScanQRCode" = "二维码扫描";
+"ScanDesc" = "将二维码图案置于扫描区域";
+"topMenuTextUrlPlaceholder" = "输入网址或扫描二维码";
+
+"SavedPhotoSucceed" = "保存图片成功！";
+"SavedPhotoFailed"  = "无权限, 请授权允许访问照片库！";
+
+"AreYouSure"    = "确定要删除吗？";
+
+// ======================
+"homePage" = "首页";
+"XinBiaoQian" = "新标签";
+"ZuiJinLiuLanLiShi" = "最近浏览历史";
+"QingChuJiLu" = "清除记录";
+"ScreenLocked" = "屏幕锁定";
+"PingMuJieSuo" = "屏幕解锁";
+"YinShenMoShi" = "隐身模式";
+"RecentlyClosed" = "最近关闭";
+"noImgMode" = "无图模式";
+"GengXin" = "更新";
+"BangDing" = "绑定";
+"PingFen" = "反馈";
+"YeJian" = "夜间模式";
+"BaiTian" = "日间模式";
+"JieCheYinShen" = "解除隐身";
+"JiaZaiZhong" = "加载中...";
+"KongBaiYe" = "空白页";
+"LiShi" = "历史";
+"ShouCang" = "收藏";
+"QingChuLiShi" = "清除历史记录";
+"BianJi" = "编辑";
+"WanCheng" = "完成";
+
+
+"SouSuo" = "搜索";
+"QingChuJiLuChengGong" = "清除记录成功!";
+"PingMuXuanZhuanYiSuoDing" = "屏幕旋转已锁定!";
+"PingMuXuanZhuanYiJiSuo" = "屏幕旋转已解锁!";
+"YiJinRuYinShenMoShi" = "进入隐身模式，您的浏览历史不会被记录";
+"YiJieChuYinShen" = "已解除隐身模式";
+"BiaoQianYiMan" = "标签页已满！";
+
+"TianJiaKuaiSuLianJie" = "添加快速链接";
+"QueDing" = "确定";
+"QuXiao" = "取消";
+"CongShuQianXuanQu" = "从收藏中选取";
+"CongLiShiZhongXuanQu" = "从历史中选取";
+
+"YiChengGongBaoCunDaoShouCang" = "已成功保存至收藏夹!";
+"ShanChuShouCangChengGong" = "删除收藏成功!";
+"YiChengGongBaoCunDaoXiangCe" = "已成功保存至相册!";
+"QingXuanZe" = "请选择";
+"ZaiDangQianYeMianDaKaiLianJie" = "在当前页面打开链接";
+"ZaiXinBiaoQianDaKaiLianJie" = "在新标签中打开链接";
+"BaoCunTuPianDaoBenDi" = "保存图片到本地";
+"BaoCunDangQianYeMianDaoShuQian" = "保存当前页到收藏";
+"YongSafariDaKaiLianJie" = "用Safari打开链接";
+
+"lishiOrShoucang" = "历史/收藏";
+"fenXiang" = "分享";
+
+"biaoTi" = "标题";
+"wangZhi" = "网址";
+"souSuo" = "搜索";
+
+"qingXuanZeYaoFenXiang" = "请选择要分享的微博:";
+"tongGuoXinLangWeiBo" = "通过新浪微博分享";
+"tongGuoTXWeiBo" = "通过腾讯微博分享";
+"wangYeJiaZaiShiBai" = "网页加载失败";
+
+"wangye" = "网页";
+"shipin" = "视频";
+"gouwu" = "购物";
+"yinyue" = "音乐";
+"tupian" = "图片";
+
+"baidu" = "百度";
+"sougou" = "搜狗";
+"yahoo" = "雅虎搜索";
+"google" = "谷歌";
+
+"youku" = "优酷视频";
+"baidushipin" = "百度视频";
+
+"jingdong" = "京东";
+"taobao" = "淘宝";
+
+"baiduyinyue" = "百度音乐";
+"yiting" = "一听";
+"baidutupian" = "百度图片";
+"sougoutupian" = "搜狗图片";
+
+// -------------------- user sync ----
+user_name = "用户名";
+pwd = "密码";
+nick_name = "昵称";
+remember_pwd = "记住密码";
+forgot_password = "忘记密码";
+sign_in_with = "使用第三方登录";
+
+login = "登录";
+logout = "注销";
+register = "注册";
+sync = "同步";
+modify_profile = "修改个人资料";
+modify = "修改";
+
+username = "用户名";
+nickname = "昵称";
+pwd = "密码";
+pwd2 = "确认";
+email = "邮箱";
+pwd_old = "原密码";
+pwd_new = "新密码";
+submit = "提交";
+modify_tip = "不需要修改的项，请留空！";
+set = "设置";
+
+reset = "重置";
+image_from_camera = "相机拍照";
+image_from_albums = "从相册选取";
+
+placeholder_username = "请输入用户名";
+placeholder_nickname = "请输入昵称";
+placeholder_pwd = "请输入密码";
+placeholder_pwd2 = "请输入确认密码";
+placeholder_email = "请输入邮箱";
+placeholder_pwd_old = "请输入原密码";
+placeholder_pwd_new = "请输入新密码";
+
+msg_username_empty = "请输入用户名";
+msg_username_length = "用户名长度不够";
+msg_nickname_empty = "请输入昵称";
+msg_nickname_length = "昵称长度不够";
+msg_pwd_empty = "请输入密码";
+msg_pwd_length = "密码长度不够";
+msg_pwd2_empty = "请确认密码";
+msg_pwd2_nomatch = "两次密码不一致";
+msg_email_empty = "请输入邮箱";
+msg_email_invalid = "邮箱无效";
+msg_pwd_old_empty = "请输入原密码";
+msg_pwd_old_length = "原密码长度不够";
+msg_pwd_new_empty = "请输入新密码";
+msg_pwd_new_length = "新密码长度不够";
+msg_modify_nochanaged = "没做任何修改";
+
+sync_providing = "提供";
+sync_service = "同步服务";
+sync_lasttime = "上次同步时间";
+sync_synccontent = "上次同步内容";
+sync_never = "从未同步";
+sync_now = "一键同步";
+
+sync_info = "同步信息";
+sync_option = "同步选项";
+sync_home = "首页导航";
+sync_fav = "书签";
+sync_history = "历史记录";
+
+sync_login = "请登录";
